@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </head>
+  <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    body{
+      background-color: rgba(0, 0, 0, 0.741);
+    }
+    .navtit{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.2;
+    color: rgb(123, 202, 4);
+    }
+    .cbody{
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    margin:30px;
+    }
+    .container{
+       display: flex;
+       flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .head{
+      display: inline-block;
+      
+      width: 700px;
+      height: 250px;
+      margin: 20px;
+      background-color: white;
+      font-family: 'Belanosima', sans-serif;
+      font-family: 'Pacifico', cursive;
+      font-family: 'Playfair', serif;
+      font-weight: bold;
+      background: rgba(255, 255, 255, 0.28);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(6.7px);
+      -webkit-backdrop-filter: blur(6.7px);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 1);
+      text-align: left;
+      padding: 20px;
+    }
+
+  </style>
+  <body>
+   
+
+
+    <nav class="navbar navbar-expand-lg bg-dark bg-body-tertiary py-3" data-bs-theme="dark">
+        <div class="container-fluid">
+          <h3 class="navtit" href="#">Show time</h3>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active px-3" aria-current="page" href="">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active px-3" href="">Distribute</a>
+              </li>
+                <li class="nav-item active px-3"><a class="nav-link" href="{% url 'login' %}">Logout</a></li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form> 
+            <a href="{% url 'profile' %}"><img src="https://api-private.atlassian.com/users/3ed7bde5a8c78e8d0d38eca297f62495/avatar" style="width: 45px;height: 45px;margin-left: 30px;" ></a>
+
+          </div>
+        </div>
+      </nav>
+     <div class="container">
+    <div class="head">
+        <h1>Hi,{{user.username}}</h1>
+        <h2>Account Details</h2>
+        <h4>Email Address: {{user.email}} </h4>
+        <h4>ticket count: {{tcount}} </h4>
+        <img src="" >
+    </div>
+ <div class="history">
+    {% for data in book %}
+    
+        <div class="card mb-3" style="width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="/media/{{data.show.movie.cover_image}}" class="img-fluid rounded-start" style="height: 200px;">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5>{{data.show.theatre}}:{{data.show.theatre.theatre_address}}</h5>
+                        <div class="total" style="display: flex;justify-content: space-around;">
+                            <div class="left" style="text-align: left;">
+                    <p>movie:{{data.show.movie.title}}</p>            
+                    <p>seat_no:{{data.seat_no}} </p>
+                    <p>amount:{{data.show.price}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+</div>
+    {% endfor %}  
+      <body/>
+      </html>

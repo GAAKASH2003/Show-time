@@ -1,0 +1,297 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <style>
+         *{
+        margin: 0px;
+        padding: 0px;
+    }
+   body{
+    background-color: rgba(0, 0, 0, 0.741);
+   }
+    .navtit{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.2;
+    color: rgb(123, 202, 4);
+    }
+    .container{
+      width:400px;
+      float: right;
+      margin: 50px;
+      margin-top: 100px;
+
+      background: rgba(255, 255, 255, 0.28);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(6.7px);
+      -webkit-backdrop-filter: blur(6.7px);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 1);
+      text-align: left;
+      padding: 20px;
+    }
+    .lcon{
+      /* width:400px; */
+      float: left;
+      margin: 50px;
+      margin-top: 20px;
+
+      background: rgba(255, 255, 255, 0.28);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(6.7px);
+      -webkit-backdrop-filter: blur(6.7px);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 1);
+      text-align: left;
+      padding: 20px;
+    }
+    .row td{
+      display: inline-block;
+      width: 35px;  
+      height: 35px;  
+      padding: 5px;
+      margin: 10px;
+      background-color: white;
+      border: 1px solid;
+      border-collapse: collapse;
+      border-radius: 5px;
+    }
+    .row td:hover{
+      background-color: rgb(188, 171, 171);
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark bg-body-tertiary py-3" data-bs-theme="dark">
+        <div class="container-fluid">
+          <h3 class="navtit" href="#">Show time</h3>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active px-3" aria-current="page" href="{% url 'index' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active px-3" href="">Distribute</a>
+              </li>
+                <li class="nav-item active px-3"><a class="nav-link" href="{% url 'login' %}">Logout</a></li>
+              
+                <!-- <li class="nav-item"><a class="nav-link" href="">Login</a></li> -->
+        
+
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      {% comment %} <div class="container">
+        <form   method="post">
+            {%csrf_token%}
+            {{ form |crispy }}
+            </br>
+        <input type="submit" class="btn btn-primary" value="Submit" />
+        </form>
+      </div> {% endcomment %}
+
+    <div class="lcon">
+      <table>
+        <tr class="row l">
+          <td style="color: black;text-align: center;">1</td>
+          <td style="color: black;text-align: center;">2</td>
+          <td style="color: black;text-align: center;">3</td>
+          <td style="color: black;text-align: center;">4</td>
+          <td style="color: black;text-align: center;">5</td>
+          <td style="color: black;text-align: center;">6</td>
+          <td style="color: black;text-align: center;">7</td>
+          <td style="color: black;text-align: center;">8</td>
+          <td style="color: black;text-align: center;">9</td>
+          <td style="color: black;text-align: center;">10</td>
+          </tr>
+        <tr class="row">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td style="background-color: rgb(16, 204, 16);"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td style="color: black;text-align: center;">1</td>
+        </tr>
+        <tr class="row">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td style="background-color: rgb(16, 204, 16);"></td>
+          <td></td>
+          <td></td>
+          <td style="color: black;text-align: center;">2</td>
+        </tr>
+        <tr class="row">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td style="color: black;text-align: center;">3</td>
+        </tr>
+        <tr class="row">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td style="background-color: rgb(16, 204, 16);"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td style="color: black;text-align: center;">4</td>
+        </tr>
+        <tr class="row">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td style="color: black;text-align: center;">5</td>
+        <tr class="row">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td style="color: black;text-align: center;">6</td>
+        </tr>
+        <tr class="row">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td style="color: black;text-align: center;">7</td>
+        </tr>
+
+        <tr class="row">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td style="color: black;text-align: center;">8</td>
+        </tr>
+        <tr class="row">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td style="color: black;text-align: center;">9</td>
+        </tr>
+        <tr class="row">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td style="color: black;text-align: center;">10</td>
+        </tr>
+
+      </table>  
+    </div> 
+    <div class="cont2">
+      <span style="color: white;text-align: center;"><button style="display: inline-block;
+      width: 35px;  
+      height: 35px;  
+      padding: 5px;
+      margin: 10px;
+      background-color: rgb(16, 204, 16);
+      border: 1px solid;
+      border-collapse: collapse;
+      border-radius: 5px;
+      "
+      ></button>Booked</span>
+      <span style="color: white;text-align: center;"><button style="display: inline-block;
+        width: 35px;  
+        height: 35px;  
+        padding: 5px;
+        margin: 10px;
+        background-color: white;
+        border: 1px solid;
+        border-collapse: collapse;
+        border-radius: 5px;
+        "
+        ></button>Available</span>
+
+    </div> 
+    <div class="container">
+        <form action="{% url 'book-ticket' pk=show.show_id  %}" method="POST">
+            {% csrf_token %}
+            {{  form|crispy}}
+            </br><input type="submit" class="btn btn-primary" value="Buy ticket" />
+            </br></br>
+            <h5 class="payment"><strong>Price:</strong> Rs {{show.price}}</h5>
+         </form>
+            
+    </div>
+   
+     
+
+
+</body>
+</html>
