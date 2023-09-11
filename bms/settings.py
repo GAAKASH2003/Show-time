@@ -138,7 +138,5 @@ STRIPE_PUBLISHABLE_KEY='pk_test_51NPjyeSDwyjOqaRhcEipa0g9MNyCV3gXs9xpu6RgnnDFlpy
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'ga21meb0b22@student.nitw.ac.in'
 EMAIL_PORT = 587
-EMAIL_HOST_PASSWORD = 'qwertzu.g'
 
